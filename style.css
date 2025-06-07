@@ -1,0 +1,543 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color:black;
+    color:#222;
+}
+
+@keyframes moveBackgroundText {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.background-text {
+    position: absolute;
+    top: 25%; /* Adjust vertical position */
+    left: 62%; /* Adjust horizontal position */
+    transform: translate(-50%, -50%); /* Centers the text */
+    font-size: 80px; /* Adjust size */
+    font-weight: bold;
+    color:rgba(4, 21, 37, 0.441);
+    /* color: rgb(255, 247, 247); Light color for subtle effect */
+    z-index: 1; /* Keeps it behind the profile image */
+    text-transform: uppercase;
+    white-space: nowrap; /* Prevents text from wrapping */
+     /* Apply Animation */
+     animation: moveBackgroundText 1.5s ease-in-out forwards;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    /* background: #130448; */
+    /* background-color:rgb(2, 10, 58); */
+    background-color: rgb(62, 4, 116);
+    border-radius: 50px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    transform: translateX(-50%);
+    width: auto;
+    padding: 10px 30px;
+    z-index: 100;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    animation: slideDown 1s ease-out forwards;
+}
+
+/* Navbar Button Styles */
+.navbar ul li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+    padding-bottom: 5px;
+}
+
+/* Underline Effect */
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 3px;
+    /* background-color: #8a2be2; */
+    background-color: aqua;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::after,
+.navbar ul li a:focus::after,
+.navbar ul li a:active::after,
+.navbar ul li a.active::after {
+    width: 100%;
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-top: 50px;
+    position: relative;
+    margin-left: 100px;
+    margin-top: -50px;
+    text-align: left;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: -45px;
+    color: rgba(255, 255, 255, 0.658);
+    
+}
+
+h2 span {
+    font-weight: bold;
+    color: #111;
+}
+
+.lastname {
+    font-size: 75px;
+    font-weight: bold;
+    /* color: #8a2be2; */
+    color:rgb(32, 140, 140);
+    margin-bottom: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+/* Buttons */
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.buttons a {
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hire Me Button */
+.hire-me-btn {
+    display: inline-block;
+    /* background: #0da2ad; Purple color */
+    background: linear-gradient(45deg, black, rgb(0, 85, 128)); 
+    color: rgba(255, 255, 255, 0.658);
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    
+    /* Fade-up Animation */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+}
+
+/* Hover Effect for Hire Me */
+.hire-me-btn:hover {
+    /* background: #095d63; Darker Purple  */
+    background: linear-gradient(45deg, rgb(0, 85, 128), black);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.409);
+}
+
+/* GitHub Button */
+.btn.purple, .btn.github {
+    background: linear-gradient(45deg, black, rgb(0, 85, 128));
+    color: rgba(255, 255, 255, 0.658);
+    transition: 0.3s ease-in-out;
+}
+
+/* GitHub Button Hover Effect */
+.btn.github:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, rgb(0, 85, 128), black);
+    box-shadow: 0px 0px 15px rgba(7, 143, 248, 0.8);
+}
+
+/* GitHub Button Icon */
+.btn.github i {
+    font-size: 24px;
+}
+
+/* Keyframes for Fade-Up Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Social Icons */
+.socials {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: aqua;
+    font-size: 28px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.socials a:hover {
+    transform: scale(1.2);
+    /* color: #8a2be2; */
+    color: rgb(20, 104, 104);
+}
+
+/* Fade-Up Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Fade-Up Animation to Buttons and Social Icons */
+button, .btn, .socials a {
+    opacity: 0;
+    animation: fadeUp 1s ease-in-out forwards;
+}
+
+/* Delay Different Elements for a Staggered Effect */
+.btn:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.btn:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.socials a:nth-child(1) {
+    animation-delay: 0.7s;
+}
+.socials a:nth-child(2) {
+    animation-delay: 0.9s;
+}
+.socials a:nth-child(3) {
+    animation-delay: 1.1s;
+}
+#text1 {
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+#text2 {
+    opacity: 0;
+    animation: fadeUp 1s ease-out 0.5s forwards;
+}
+/* Social Description Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Social Paragraph Styling */
+.social-description {
+    font-size: 20px; /* Adjust size as needed */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* color: #585454;  */
+    /* color: white; */
+    color: rgba(255, 255, 255, 0.658);
+    /* Dark gray for readability */
+    text-align: left; /* Center align below social icons */
+    margin-top: 10px; /* Adjust spacing from icons */
+    max-width: 725px; /* Prevent overly wide text */
+    line-height: 1.6; /* Improve readability */
+    
+    opacity: 0; /* Ensure it starts hidden */
+    animation: fadeUp 1s ease-out 0.5s forwards; /* Ensure the animation runs */
+}
+
+
+.profile-image {
+    display: block;
+    margin: 30px auto 0; /* Adjusts spacing from navbar */
+    width: 325px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 50%;
+
+    position: absolute; /* Positions image independently */
+    top: 120px; /* Adjust distance from navbar */
+    left: 70%; /* Centers the image */
+    transform: translateX(-50%); /* Ensures perfect centering */
+    z-index: 10; /* Ensures image appears above background */
+     /* Animation */
+     opacity: 0; /* Start invisible */
+     animation: fadeInUp 1.2s ease-out forwards;
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.gradient-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45vw; /* Covers half of the screen from the right */
+    height: 130vh; /* Full height of the page */
+    /* background: linear-gradient(to left, rgba(200, 162, 200, 0.6), rgba(255, 255, 255, 0)); */
+       background: linear-gradient(to left,rgba(0, 255, 255, 0.717), black); 
+    z-index: 1; /* Ensures it stays behind everything */
+}
+
+/* Ensure the page fits perfectly on all mobile screens */
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+/* Responsive Design *//* General Responsive Fixes */
+/* MOBILE VIEW FIXES */
+@media screen and (max-width: 480px) {
+    /* General Fixes */
+    body {
+        font-size: 14px;
+    }
+
+    /* Navbar Fix */
+    .navbar {
+        padding: 8px;
+        position: fixed;
+        top: 7px;
+        right: 7px;
+        left: 7px;
+        background: black;
+        border-radius: 20px;
+        width: calc(100% - 20px);
+        display: flex;
+        justify-content: center;
+        z-index: 100;
+    }
+
+    .navbar ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .navbar ul li a {
+        font-size: 14px;
+        padding: 4px;
+    }
+
+    /* Hero Section Fix */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        margin-left: 0;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+        z-index: 1;
+    }
+
+    /* Profile Image Fix */
+    .profile-image {
+        width: 190px; /* Smaller size for mobile */
+        position: absolute;
+        top: 12%; /* Center vertically */
+        left: 31%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Ensure perfect centering */
+        margin-bottom: 0;
+        border-radius: 50%; /* Circular shape */
+        z-index: 2;
+    }
+    
+
+    /* Background Text Fix */
+    .background-text {
+        font-size: 30px; /* Smaller size for better fit */
+        position: absolute;
+        left: 10%; /* Center horizontally */
+        top: 20%; /* Center vertically */
+        transform: translate(-50%, -50%); /* Ensures perfect centering */
+        color: rgba(4, 21, 37, 0.441);
+        z-index: 1;
+        white-space: nowrap;
+        text-align: center;
+    }
+    
+
+    /* Heading Fix */
+    h2 {
+        font-size: 18px;
+        margin-bottom: -25px;
+        margin-top: 110%;
+    }
+
+    .lastname {
+        font-size: 32px;
+        color: rgb(32, 140, 140);
+    }
+
+    p {
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    /* Buttons Fix */
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+        border-radius: 20px;
+    }
+
+    .hire-me-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* Social Icons Fix */
+    .socials {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .socials a {
+        font-size: 20px;
+    }
+
+    /* Social Description */
+    .social-description {
+        font-size: 14px;
+        text-align: center;
+        max-width: 90%;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin: 10px auto;
+        line-height: 1.4;
+    }
+
+    /* Gradient Background Fix */
+    .gradient-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw; /* Covers half of the screen from the right */
+        height: 45vh; /* Full height of the page */
+        /* background: linear-gradient(to left, rgba(200, 162, 200, 0.6), rgba(255, 255, 255, 0)); */
+           background: linear-gradient(to bottom,rgba(0, 255, 255, 0.717), black); 
+        z-index: 1;
+    }
+
+    /* Animation Delay Adjustments */
+    .btn:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    .btn:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+    .socials a:nth-child(1) {
+        animation-delay: 0.5s;
+    }
+
+    .socials a:nth-child(2) {
+        animation-delay: 0.7s;
+    }
+
+    .socials a:nth-child(3) {
+        animation-delay: 0.9s;
+    }
+
+    /* Ensure the page fits perfectly */
+    html, body {
+        width: 100%;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+}

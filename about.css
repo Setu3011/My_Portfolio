@@ -1,0 +1,216 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color:black;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+/* Navigation Bar */
+/* Removed all navbar styles */
+
+/* Fade In Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.about-me {
+    padding: 100px 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease-out forwards; /* Apply fade-in animation */
+}
+
+.about-me > * {
+    opacity: 0; /* Make immediate children initially hidden */
+    animation: fadeIn 1s ease-out forwards; /* Apply fade-in to children */
+}
+
+.about-me h1 {
+    color: purple;
+    font-size: 3.5rem;
+    margin: 60px 0 40px;
+    text-align: center;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-me h1::after {
+    content: "";
+    display: block;
+    width: 25%;
+    height: 2px;
+    background-color: aqua;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-me h2 {
+    font-size: 48px;
+    margin: 60px 0 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(129, 19, 247);
+    animation-delay: 0.7s;
+}
+
+.about-me p {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+@keyframes moveBackgroundText {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Removed .background-text and related span styles as requested previously */
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.grey-text {
+    color: grey;
+    font-family: 'Fira Code', monospace;
+    font-size: 36px;
+}
+
+.aqua-text {
+    color: rgb(219, 14, 219);
+    font-family: 'Fira Code', monospace;
+    font-size: 36px;
+}
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.socials a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    transition: transform 0.3s ease-in-out;
+    /* Removed opacity and animation from here */
+}
+
+/* Removed Adding delay for each icon */
+
+.socials a:hover {
+    transform: scale(1.2);
+    color: aqua;
+}
+
+.about-me h3 {
+    color: purple;
+    font-size: 3.5rem;
+    margin: 80px 0 40px;
+    text-align: center;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-me h3::after {
+    content: "";
+    display: block;
+    width: 25%;
+    height: 2px;
+    background-color: aqua;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Removed Typewriter Container and Typewriter Text styles */
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    /* Existing responsive styles */
+}
+
+@media (max-width: 480px) {
+    /* Existing responsive styles */
+}
+
+.personal-info-item {
+    margin: 20px 0;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.personal-info-label {
+    color:rgb(89, 182, 235); /* Pink color for labels */
+    font-size: 35px;
+}
+
+.personal-info-value {
+    color: grey; /* Grey color for values */
+    font-size: 35px; /* Enlarged font size for values */
+}
+
+.section-divider {
+    width: 100%; /* Reverted to longer length */
+    height: 2px;
+    background-color: aqua; /* Changed to aqua */
+    margin: 40px auto; /* Space above and below, and center the divider */
+}
+
+.tech-logos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
+    max-width: 1200px;
+}
+
+.tech-logos i, .tech-logos img {
+    font-size: 90px;
+    height: 120px;
+    width: auto;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.tech-logos i:hover, .tech-logos img:hover {
+    transform: scale(1.1);
+    color: aqua;
+}

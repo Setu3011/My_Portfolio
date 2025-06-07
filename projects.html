@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setu Patel | Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="projects.css">
+    <!-- AOS Library CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="projects.html" class="active"><i class="fas fa-briefcase"></i> Projects</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-section" data-aos="fade-up" data-aos-duration="1500">
+        <div class="projects-container">
+            <h1 class="section-title" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100">My Projects</h1>
+            <div class="projects-filter" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="design">UI/UX Design</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card" data-category="web" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="600">
+                    <div class="project-icon">
+                        <i class="fas fa-hand-holding-heart red-icon"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Lifeline Donors</h3>
+                        <p>A web application to connect blood donors with recipients, managing donor information and requests.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Setu3011" target="_blank" class="btn github"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card" data-category="cloud" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="800">
+                    <div class="project-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="project-img-icon">
+                    </div>
+                    <div class="project-info">
+                        <h3>Hosting a Static Website on AWS EC2 Linux</h3>
+                        <p>Detailed guide and implementation for deploying a static website on an AWS EC2 Linux instance.</p>
+                        <div class="project-tech">
+                            <span>AWS EC2</span>
+                            <span>Linux</span>
+                            <span>Load Balancer</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Setu3011" target="_blank" class="btn github"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card" data-category="web" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1000">
+                    <div class="project-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>My Portfolio</h3>
+                        <p>A modern, responsive portfolio website showcasing my skills, projects, and contact information.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Setu3011" target="_blank" class="btn github"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <!-- Removed E-Commerce Platform Project Card -->
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            easing: 'ease-in-out'
+        });
+
+        // Get current page path
+        const currentPage = window.location.pathname;
+        const page = currentPage.split('/').pop();
+        const pageMap = {
+            'index.html': 'home',
+            'about.html': 'about',
+            'projects.html': 'projects',
+            'contact.html': 'contact'
+        };
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        if (pageMap[page]) {
+            document.getElementById(pageMap[page]).classList.add('active');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html> 
